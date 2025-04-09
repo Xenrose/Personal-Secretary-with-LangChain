@@ -1,6 +1,6 @@
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 
-from langchain_community.vectorstores import FAISS
+from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 from langchain.schema import Document
 
@@ -29,7 +29,7 @@ docs = [Document(page_content="LangGraph is a framework for building LLM state m
         Document(page_content="LangChain is a framework for composing LLM applications.")]
 
 embedding = OpenAIEmbeddings()
-vectorstore = FAISS.from_documents(docs, embedding)
+vectorstore = Chroma.from_documents(docs, embedding)
 retriever = vectorstore.as_retriever()
 
 rag_chain = RetrievalQA.from_chain_type(llm=llm_rag, retriever=retriever)

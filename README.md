@@ -1,6 +1,15 @@
 # LangGraph 기반 대화 라우팅 시스템 (openai api warpping)
 
-이 프로젝트는 LangGraph를 활용하여 사용자의 입력을 분류하고 적절한 대화 모델로 라우팅하는 시스템입니다.
+## 프로젝트 개요
+'비서'란 정말 바쁜 CEO 혹은 부를 많이 쌓은 회장님과 어울리는 수식어였습니다.  
+하지만 Ai가 보급된 현재,
+비록 운전을 대신 해줄 수는 없지만  
+매일 아침 날씨 정도는 미리 알려줄 수 있으며 필요한 정보를 대신 수집해 주는 비서가 있다면,  
+그리고 그런 비서가 24시간 나와 함께 지낸다면  
+시간을 아낄 수 있음은 물론이고 성장력 또한 그를 만나기 전과 확연히 다를 것입니다.  
+
+요약: 이 프로젝트는 LangGraph를 활용하여 사용자의 입력을 분류하고 적절한 대화 모델로 라우팅하는 시스템입니다.
+
 
 ## 주요 기능
 
@@ -36,14 +45,18 @@
    pip install -r requirements.txt
    ```
 
-2. `.env` 파일 생성:
+2. `.env` 파일 구성:
    ```
    OPENAI_API_KEY=your_api_key_here
    ```
 
 3. 서버 실행:
    ```
+   # back-end
    python app.py
+
+   # front-end
+   stramlit run front-end.py
    ```
 
 4. API 엔드포인트:
@@ -53,5 +66,10 @@
 ## 추가 구현 사항
 |구현사항|체크|
 |--|--|
-|streamlit으로 프론트엔드 구현||
+|streamlit으로 프론트엔드 구현|V|
 |Docker compose로 image를 만들어서 배포||
+|VectorDB 내 문서 추가||
+|Conversation Memory 추가||
+|Agent System||
+|MCP||
+|NoSQL을 추가하여 대화 내역 저장||
